@@ -12,6 +12,7 @@ public class AuthorizationTest extends BaseTest {
     @Override
     public void setUp() {
         super.setUp();
+        
     }
 
     @Test
