@@ -6,12 +6,15 @@ import org.junit.jupiter.api.TestInstance;
 import pages.base.AuthPage;
 import pages.base.BasePage;
 
+import java.util.Properties;
+
 import static com.codeborne.selenide.Selenide.*;
 
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
 
+    static Properties properties = new Properties();
     protected BasePage basePage = new BasePage();
 
 

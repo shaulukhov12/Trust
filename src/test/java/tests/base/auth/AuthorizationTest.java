@@ -1,5 +1,6 @@
 package tests.base.auth;
 
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tests.base.BaseTest;
@@ -17,8 +18,13 @@ public class AuthorizationTest extends BaseTest {
 
     @Test
     public void loginTest(){
-        clearBrowserCookieAndStorage();
+        //clearBrowserCookieAndStorage();
         authPage.isAuthWindowVisible();
         authPage.clickToLoginInput();
+        Selenide.sleep(1000);
+        authPage.clickToPasswordInput();
+        Selenide.sleep(1000);
+        authPage.submitLoginButton();
+        Selenide.sleep(3000);
     }
 }

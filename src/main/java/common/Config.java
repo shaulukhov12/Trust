@@ -2,7 +2,10 @@ package common;
 
 import com.codeborne.selenide.Configuration;
 
+import java.util.Properties;
+
 public class Config {
+    static Properties properties = new Properties();
 
     /***
      * Specify the browser and platform for test:
