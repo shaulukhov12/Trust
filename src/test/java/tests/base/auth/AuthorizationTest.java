@@ -1,6 +1,8 @@
 package tests.base.auth;
 
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.base.BaseTest;
 
@@ -12,13 +14,22 @@ public class AuthorizationTest extends BaseTest {
     @Override
     public void setUp() {
         super.setUp();
-        
+
     }
 
     @Test
-    public void loginTest(){
-        clearBrowserCookieAndStorage();
+    @DisplayName("Authorization as a Provider")
+    public void loginProviderTest() {
+
+        // Check that auth window visible and click to Login
         authPage.isAuthWindowVisible();
-        authPage.clickToLoginInput();
+        authPage.clickToProviderLoginInput();
+        // Click to password
+        authPage.clickToPasswordInput();
+        // Click to Submit
+        authPage.submitLoginButton();
+        // Check that header is visible after login
+        appointmentsPage.isHeaderProviderVisible();
+
     }
 }

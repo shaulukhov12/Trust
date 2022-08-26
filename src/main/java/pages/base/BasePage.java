@@ -3,6 +3,8 @@ package pages.base;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
+import java.util.Properties;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -10,6 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BasePage {
 
+    static Properties properties = new Properties();
     /**
      *
      * The method for opening url
